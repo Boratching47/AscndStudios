@@ -8,16 +8,18 @@
 html, body {
   height: 100%;
   font-family: Arial, sans-serif;
+  overflow: hidden; /* prevent scrollbars */
 }
 
-/* Full-screen video background */
+/* Full-screen responsive video background */
 #bg-video {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
+  transform: translate(-50%, -50%);
   z-index: -2;
 }
 
@@ -30,4 +32,19 @@ html, body {
   height: 100%;
   background-color: rgba(0,0,0,0.3); /* adjust opacity as needed */
   z-index: -1;
+}
+
+/* Make sure video covers screen on very small devices */
+@media (max-aspect-ratio: 16/9) {
+  #bg-video {
+    width: auto;
+    height: 100%;
+  }
+}
+
+@media (min-aspect-ratio: 16/9) {
+  #bg-video {
+    width: 100%;
+    height: auto;
+  }
 }

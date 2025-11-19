@@ -115,3 +115,36 @@
     0% { opacity: 0; transform: translateY(40px); }
     100% { opacity: 1; transform: translateY(0); }
 }
+
+/* POPUP SUCCESS MESSAGE */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease forwards;
+  z-index: 999999;
+}
+
+.popup-box {
+  background: white;
+  color: black;
+  width: 350px;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  animation: fadeUp 0.4s ease forwards;
+}
+
+.popup-box h2 {
+  margin-bottom: 10px;
+}
+
+.popup-box p {
+  margin-bottom: 20px;
+}

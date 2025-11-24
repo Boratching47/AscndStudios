@@ -1,85 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact</title>
-  <link rel="stylesheet" href="contact.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="contact.css" />
 </head>
 
 <body>
-  <!-- Background Video -->
-  <video class="bg-video" src="website_test.mp4" autoplay loop muted></video>
 
-  <!-- Luminous Contact Card -->
-  <div class="card-wrapper">
-    <div class="card" id="contactCard">
-      <div class="light-layer">
-        <div class="slit"></div>
-        <div class="lumen">
-          <div class="min"></div>
-          <div class="mid"></div>
-          <div class="hi"></div>
-        </div>
-        <div class="darken">
-          <div class="sl"></div>
-          <div class="ll"></div>
-          <div class="slt"></div>
-          <div class="srt"></div>
-        </div>
-      </div>
+    <header class="header">
+        <a href="index.html" class="logo">logo</a>
 
-      <div class="content">
-        <div class="icon">
-          <h2>Contact Me</h2>
-        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="service.html">Service</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
 
-        <div class="bottom">
-          <p>Fill out the form below and I’ll get back to you!</p>
+    <section class="contact-container">
+        <h1 class="title">Contact Me</h1>
+        <p class="subtitle">Got a question or project in mind? Send me a message!</p>
 
-          <!-- Code unlock before showing form -->
-          <div class="code-ui">
-            <div class="code-display" id="codeDisplay">____</div>
-            <div class="letter-grid" id="letterGrid"></div>
-          </div>
+        <form id="contact-form">
+            <input type="hidden" name="access_key" value="fedfe256-af31-453b-94a5-f0bf9b87386c" />
 
-          <div class="toggle" id="toggleBtn">
-            <div class="handle"></div>
-            <span>Activate Lumen</span>
-          </div>
-
-          <!-- Hidden form initially -->
-          <form id="contact-form" style="display:none;">
-            <input type="hidden" name="access_key" value="fedfe256-af31-453b-94a5-f0bf9b87386c"/>
             <div class="input-group">
-              <input type="text" name="name" placeholder="Your Name" required />
+                <input type="text" name="name" placeholder="Your Name" required />
             </div>
+
             <div class="input-group">
-              <input type="email" name="email" placeholder="Your Email" required />
+                <input type="email" name="email" placeholder="Your Email" required />
             </div>
+
             <div class="input-group">
-              <textarea name="message" placeholder="Your Message" required></textarea>
+                <textarea name="message" placeholder="Your Message" required></textarea>
             </div>
+
             <button type="submit" class="btn">Send Message</button>
             <p id="result"></p>
-          </form>
+        </form>
+    </section>
 
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <header class="header">
-    <a href="index.html" class="logo">logo</a>
-    <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a href="service.html">Service</a>
-      <a href="about.html">About</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="contact.html" class="active">Contact</a>
-    </nav>
-  </header>
-
-  <script src="contact.js"></script>
+    <script src="contact.js"></script>
 </body>
 </html>

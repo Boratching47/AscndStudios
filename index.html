@@ -9,28 +9,44 @@
 
 <body>
 
-    <!-- Background Image with blur -->
-    <div class="bg"></div>
-
     <!-- Header -->
     <header class="Header">
         <img src="images/logo-icon.png" class="logo-left" alt="Logo Icon" />
         <img src="images/logo-main.png" class="logo-center" alt="Main Logo" />
 
         <nav class="navbar">
-            <a href="index.html">Home</a>
-            <a href="#">Service</a>
-            <a href="#">About</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Contact</a>
+            <a href="#home">Home</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <!-- Floating Coming Soon Card -->
-    <div class="card fade-in">
-        <h1>COMING SOON</h1>
-        <p>Our website is launching soon. Stay tuned!</p>
+    <!-- First Section: Coming Soon -->
+    <section id="home" class="section home-section">
+        <div class="card fade-in">
+            <h1>COMING SOON</h1>
+            <p>Our website is launching soon. Stay tuned!</p>
+        </div>
+    </section>
+
+    <!-- Second Section: Contact Me -->
+    <section id="contact" class="section contact-section">
+        <h2>Contact Me</h2>
+        <form id="contact-form" action="https://formsubmit.co/justinc.cercado@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Popup -->
+    <div id="popup">
+        <div class="popup-content">
+            <p>Message sent successfully!</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>

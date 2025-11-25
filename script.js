@@ -1,4 +1,3 @@
-// CONTACT POPUP + EMAIL SENDING
 const contactForm = document.getElementById("contact-form");
 const popup = document.getElementById("popup");
 
@@ -8,7 +7,6 @@ if (contactForm) {
 
         const formData = new FormData(contactForm);
 
-        // Send using FormSubmit AJAX endpoint
         const response = await fetch(contactForm.action, {
             method: "POST",
             body: formData,

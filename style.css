@@ -4,18 +4,17 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
 }
 
-/* Background Image with blur */
-.bg {
+/* Background Image with Parallax */
+body {
     background-image: url("images/background.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: blur(8px) brightness(0.7); /* blur + slightly darker */
-    position: fixed;
-    inset: 0;
-    z-index: -1;
+    background-attachment: fixed; /* Parallax effect */
+    height: 100%;
 }
 
 /* Header */
@@ -25,17 +24,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: absolute;
+    position: fixed;
     top: 0;
-    z-index: 2;
-    background-color: rgba(128, 128, 128, 0.8); /* grey navbar */
+    z-index: 10;
+    background-color: rgba(128, 128, 128, 0.8);
     border-bottom: 1px solid #aaa;
 }
 
 .logo-left {
     width: 60px;
     height: auto;
-    animation: fadeDrop 1s ease;
 }
 
 .logo-center {
@@ -45,10 +43,9 @@
     transform: translateX(-50%);
     width: 150px;
     height: auto;
-    animation: fadeDrop 1.3s ease;
 }
 
-/* Navigation Bar */
+/* Navbar */
 .navbar a {
     text-decoration: none;
     margin-left: 25px;
@@ -63,16 +60,19 @@
     transform: scale(1.05);
 }
 
-/* Centered Coming Soon Card */
-body {
+/* Sections */
+.section {
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* full viewport height */
-    overflow: hidden;
+    position: relative;
+    padding-top: 80px; /* to not hide under navbar */
     flex-direction: column;
 }
 
+/* Coming Soon Card */
 .card {
     backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.2);
@@ -82,20 +82,80 @@ body {
     text-align: center;
     box-shadow: 0 0 25px rgba(0,0,0,0.3);
     border: 1px solid rgba(255,255,255,0.3);
-    animation: floatUp 1.5s ease-out;
-    z-index: 1;
+    color: white;
 }
 
 .card h1 {
-    color: white;
     font-size: 2rem;
     letter-spacing: 2px;
 }
 
 .card p {
-    color: white;
     margin-top: 10px;
     opacity: 0.9;
+}
+
+/* Contact Section */
+.contact-section {
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    padding: 100px 20px;
+}
+
+.contact-section h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-section input,
+.contact-section textarea {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: rgba(255,255,255,0.8);
+}
+
+.contact-section button {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #555;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-section button:hover {
+    background-color: #333;
+}
+
+/* Popup */
+#popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px 40px;
+    border-radius: 15px;
+    text-align: center;
 }
 
 /* Animations */
@@ -109,7 +169,7 @@ body {
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 500px) {
     .card {
         width: 90%;
@@ -124,4 +184,21 @@ body {
         font-size: 0.9rem;
         margin-left: 15px;
     }
+}
+
+/* Overlay for readability */
+.section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+    z-index: 0;
+}
+
+/* Make content appear above overlay */
+.section .card,
+.section h2,
+.section form {
+    position: relative;
+    z-index: 1;
 }

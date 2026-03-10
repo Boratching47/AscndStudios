@@ -9,10 +9,18 @@
 
 <body>
 
+    <!-- Video Background -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="website_back.mp4" type="video/mp4">
+    </video>
+
+    <!-- Video Overlay (for readability) -->
+    <div id="video-overlay"></div>
+
     <!-- Header -->
     <header class="Header">
         <img src="images/logo-icon.png" class="logo-left" alt="Logo Icon" />
-        <img src="images/logo-main.png" class="logo-center" alt="Main Logo" />
+        <img src="images/logo-main.png" class="logo-center" alt="Alternate Logo" />
 
         <nav class="navbar">
             <a href="#home">Home</a>
@@ -20,11 +28,10 @@
         </nav>
     </header>
 
-    <!-- First Section: Coming Soon -->
+    <!-- First Section: Logo (replaces Coming Soon) -->
     <section id="home" class="section home-section">
         <div class="card fade-in">
-            <h1>COMING SOON</h1>
-            <p>Our website is launching soon. Stay tuned!</p>
+            <img src="images/Alternate Logo_1.png" alt="Alternate Logo" class="alternate-logo" />
         </div>
     </section>
 
@@ -38,6 +45,11 @@
             <button type="submit">Send</button>
         </form>
     </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <img src="images/Ascnd.png" alt="Footer Logo" class="footer-logo" />
+    </footer>
 
     <!-- Popup -->
     <div id="popup">

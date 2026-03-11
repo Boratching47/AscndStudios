@@ -62,15 +62,6 @@ body {
     height: auto;
 }
 
-.logo-center {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 150px;
-    height: auto;
-}
-
 /* Navbar */
 .navbar a {
     text-decoration: none;
@@ -118,6 +109,18 @@ body {
     max-width: 90vw;
     height: auto;
     filter: drop-shadow(0 4px 24px rgba(0,0,0,0.5));
+}
+
+/* Tagline under logo */
+.tagline {
+    margin-top: 16px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    text-align: center;
 }
 
 /* Fade-in animation */

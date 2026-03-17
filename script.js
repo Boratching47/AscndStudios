@@ -5,21 +5,32 @@ if (contactForm) {
     contactForm.addEventListener("submit", async (e) => {
         e.preventDefault();
 
+        const submitBtn = contactForm.querySelector("button[type='submit']");
+        submitBtn.textContent = "Sending...";
+        submitBtn.disabled = true;
+
         const formData = new FormData(contactForm);
 
-        const response = await fetch(contactForm.action, {
-            method: "POST",
-            body: formData,
-            headers: {
-                "Accept": "application/json"
-            }
-        });
+        try {
+            const response = await fetch(contactForm.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
 
-        if (response.ok) {
-            popup.style.display = "flex";
-            contactForm.reset();
-        } else {
+            if (response.ok) {
+                popup.style.display = "flex";
+                contactForm.reset();
+            } else {
+                alert("Something went wrong. Please try again.");
+            }
+        } catch (error) {
             alert("Something went wrong. Please try again.");
+        } finally {
+            submitBtn.textContent = "Send";
+            submitBtn.disabled = false;
         }
     });
 }

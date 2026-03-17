@@ -17,7 +17,7 @@
     <!-- Video Overlay (for readability) -->
     <div id="video-overlay"></div>
 
-    <!-- Header added and changed -->
+    <!-- Header -->
     <header class="Header">
         <img src="images/logo-icon.png" class="logo-left" alt="Logo Icon" />
 
@@ -27,7 +27,7 @@
         </nav>
     </header>
 
-    <!-- First Section: Logo (replaces Coming Soon) -->
+    <!-- First Section: Logo -->
     <section id="home" class="section home-section">
         <div class="card fade-in">
             <img src="images/logo-main.png" alt="Ascnd Studios Logo" class="alternate-logo" />
@@ -38,7 +38,9 @@
     <!-- Second Section: Contact Me -->
     <section id="contact" class="section contact-section">
         <h2>Contact Me</h2>
-        <form id="contact-form" action="https://formsubmit.co/info@ascndstudios.com" method="POST"></form>
+        <form id="contact-form" action="https://formsubmit.co/info@ascndstudios.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="box">
             <input type="text" name="name" placeholder="Your Name" required />
             <input type="email" name="email" placeholder="Your Email" required />
             <textarea name="message" placeholder="Your Message" required></textarea>

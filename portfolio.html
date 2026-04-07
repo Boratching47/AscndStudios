@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Work — Ascnd Studios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="portfolio.css" />
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="video" aria-hidden="true"></div>
+
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="website_back.mp4" type="video/mp4" />
+    </video>
+    <div id="video-overlay"></div>
+
+    <header class="site-header">
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+        <a href="index.html" class="header-logo">
+            <img src="images/logo-icon.png" width="48" height="48" alt="Ascnd Studios" />
+        </a>
+    </header>
+
+    <div class="nav-overlay" id="nav-overlay" hidden></div>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul class="site-nav-list">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="portfolio.html" class="active" aria-current="page">Examples of work</a></li>
+            <li><a href="contact.html">Contacts</a></li>
+        </ul>
+    </nav>
+
+    <main id="main">
+        <section class="portfolio-section">
+            <p class="section-label">Selected work</p>
+            <h1 class="title">Our Work</h1>
+
+            <div class="video-stage">
+                <video id="main-video" autoplay muted loop playsinline></video>
+                <div class="stage-overlay"></div>
+                <div class="video-meta">
+                    <p class="video-category" id="meta-category"></p>
+                    <h2 class="video-title" id="meta-title"></h2>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="nav-buttons">
+                    <button type="button" class="nav-btn" id="btn-prev" aria-label="Previous">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <polyline points="15 18 9 12 15 6"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="nav-btn" id="btn-next" aria-label="Next">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <span class="counter">
+                    <span id="count-current">1</span> / <span id="count-total">1</span>
+                </span>
+
+                <button type="button" class="play-btn" id="btn-play">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" id="play-icon" aria-hidden="true">
+                        <rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>
+                    </svg>
+                    <span id="play-label">Pause</span>
+                </button>
+            </div>
+
+            <div class="thumb-strip" id="thumb-strip"></div>
+            <p class="video-description" id="video-description"></p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-heading">Contacts</p>
+            <a href="mailto:info@ascndstudios.com" class="footer-link">Email</a>
+            <a href="https://www.instagram.com/ascndstudio/" class="footer-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script src="portfolio.js"></script>
+</body>
+</html>

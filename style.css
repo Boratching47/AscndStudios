@@ -69,6 +69,7 @@ body {
     object-fit: cover;
     object-position: center center;
     z-index: -2;
+    pointer-events: none; /* prevent the video layer blocking clicks */
 }
 
 #video-overlay {
@@ -79,6 +80,7 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.52);
     z-index: -1;
+    pointer-events: none; /* ensure overlay never intercepts taps/clicks */
 }
 
 /* ----- Header: hamburger left, logo right ----- */

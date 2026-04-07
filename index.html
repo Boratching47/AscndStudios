@@ -4,30 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ascnd Studios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+    <a class="skip-link" href="#home">Skip to content</a>
+    <div id="video" aria-hidden="true"></div>
 
-    <!-- Video Background -->
     <video autoplay muted loop playsinline id="bg-video">
-        <source src="website_back.mp4" type="video/mp4">
+        <source src="website_back.mp4" type="video/mp4" />
     </video>
-
-    <!-- Video Overlay (for readability) -->
     <div id="video-overlay"></div>
 
-    <!-- Header -->
-    <header class="Header">
-        <img src="images/logo-icon.png" class="logo-left" alt="Logo Icon" />
-
-        <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#contact">Contact</a>
-        </nav>
+    <header class="site-header">
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+        <a href="index.html" class="header-logo">
+            <img src="images/logo-icon.png" width="48" height="48" alt="Ascnd Studios" />
+        </a>
     </header>
 
-    <!-- First Section: Logo -->
+    <div class="nav-overlay" id="nav-overlay" hidden></div>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul class="site-nav-list">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="portfolio.html">Examples of work</a></li>
+            <li><a href="contact.html">Contacts</a></li>
+        </ul>
+    </nav>
+
     <section id="home" class="section home-section">
         <div class="card fade-in">
             <img src="images/logo-main.png" alt="Ascnd Studios Logo" class="alternate-logo" />
@@ -35,32 +43,35 @@
         </div>
     </section>
 
-    <!-- Second Section: Contact Me -->
     <section id="contact" class="section contact-section">
-        <h2>Contact Me</h2>
+        <h2>Contact Us</h2>
+        <p class="contact-lead">Get in touch to get your free quote—tell us about your project.</p>
         <form id="contact-form" action="https://formsubmit.co/info@ascndstudios.com" method="POST">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="box">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="box" />
+            <input type="text" name="name" placeholder="Your Name" required autocomplete="name" />
+            <input type="email" name="email" placeholder="Your Email" required autocomplete="email" />
             <textarea name="message" placeholder="Your Message" required></textarea>
             <button type="submit">Send</button>
         </form>
     </section>
 
-    <!-- Footer -->
     <footer class="site-footer">
-        
+        <div class="footer-inner">
+            <p class="footer-heading">Contacts</p>
+            <a href="mailto:info@ascndstudios.com" class="footer-link">Email</a>
+            <a href="https://www.instagram.com/ascndstudio/" class="footer-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
     </footer>
 
-    <!-- Popup -->
-    <div id="popup">
+    <div id="popup" role="dialog" aria-modal="true" aria-labelledby="popup-text" aria-hidden="true">
         <div class="popup-content">
-            <p>Message sent successfully!</p>
-            <button onclick="closePopup()">Close</button>
+            <p id="popup-text">Message sent successfully!</p>
+            <button type="button" id="popup-close">Close</button>
         </div>
     </div>
 
+    <script src="nav.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

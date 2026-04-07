@@ -3,48 +3,74 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact</title>
+    <title>Contact — Ascnd Studios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="contact.css" />
 </head>
-
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="video" aria-hidden="true"></div>
 
-    <header class="header">
-        <a href="index.html" class="logo">logo</a>
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="website_back.mp4" type="video/mp4" />
+    </video>
+    <div id="video-overlay"></div>
 
-        <nav class="navbar">
-            <a href="index.html">Home</a>
-            <a href="service.html">Service</a>
-            <a href="about.html">About</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="contact.html" class="active">Contact</a>
-        </nav>
+    <header class="site-header">
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+        <a href="index.html" class="header-logo">
+            <img src="images/logo-icon.png" width="48" height="48" alt="Ascnd Studios" />
+        </a>
     </header>
 
-    <section class="contact-container">
-        <h1 class="title">Contact Me</h1>
-        <p class="subtitle">Got a question or project in mind? Send me a message!</p>
+    <div class="nav-overlay" id="nav-overlay" hidden></div>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul class="site-nav-list">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="portfolio.html">Examples of work</a></li>
+            <li><a href="contact.html" class="active" aria-current="page">Contacts</a></li>
+        </ul>
+    </nav>
 
-        <form id="contact-form">
-            <input type="hidden" name="access_key" value="fedfe256-af31-453b-94a5-f0bf9b87386c" />
+    <main id="main" class="contact-page-main">
+        <section class="contact-container">
+            <h1 class="contact-page-title">Contact Us</h1>
+            <p class="contact-page-lead">Get in touch to get your free quote.</p>
+            <p class="contact-page-sub">Got a question or project in mind? Send a message.</p>
 
-            <div class="input-group">
-                <input type="text" name="name" placeholder="Your Name" required />
-            </div>
+            <form id="contact-form">
+                <input type="hidden" name="access_key" value="fedfe256-af31-453b-94a5-f0bf9b87386c" />
 
-            <div class="input-group">
-                <input type="email" name="email" placeholder="Your Email" required />
-            </div>
+                <div class="input-group">
+                    <input type="text" name="name" placeholder="Your Name" required autocomplete="name" />
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Your Email" required autocomplete="email" />
+                </div>
+                <div class="input-group">
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                </div>
 
-            <div class="input-group">
-                <textarea name="message" placeholder="Your Message" required></textarea>
-            </div>
+                <button type="submit" class="contact-submit-btn">Send Message</button>
+                <p id="result" class="form-result" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
 
-            <button type="submit" class="btn">Send Message</button>
-            <p id="result"></p>
-        </form>
-    </section>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-heading">Contacts</p>
+            <a href="mailto:info@ascndstudios.com" class="footer-link">Email</a>
+            <a href="https://www.instagram.com/ascndstudio/" class="footer-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+    </footer>
 
+    <script src="nav.js"></script>
     <script src="contact.js"></script>
 </body>
 </html>

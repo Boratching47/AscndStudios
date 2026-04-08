@@ -1,18 +1,18 @@
 const videos = [
     {
-        src: "JOTTER_IG_vid.mp4",
+        src: "Jotter Ig Vid.mp4",
         title: "Jotter",
         category: "Social Media",
         description: "Instagram content produced for Jotter."
     },
     {
-        src: "Mike_Greer_Real_Estate.mp4",
+        src: "Mike Greer Real Estate.mp4",
         title: "Mike Greer Real Estate",
         category: "Commercial",
         description: "Brand film produced for Mike Greer Real Estate."
     },
     {
-        src: "NOKI_video.mp4",
+        src: "Noki Video.mp4",
         title: "Noki",
         category: "Brand Film",
         description: "Visual brand story produced for Noki."
@@ -24,7 +24,7 @@ const videos = [
         description: "Commercial production for Retropolitan."
     },
     {
-        src: "Truck_Norris.mp4",
+        src: "Truck Norris.mp4",
         title: "Truck Norris",
         category: "Commercial",
         description: "Commercial production for Truck Norris."
@@ -70,6 +70,12 @@ mainVideo.addEventListener("error", () => {
 
 /* Build thumbnail strip */
 function buildThumbs() {
+    // Create wrapper for thumbs
+    const wrapper = document.createElement("div");
+    wrapper.className = "thumb-container";
+    thumbStrip.parentNode.insertBefore(wrapper, thumbStrip);
+    wrapper.appendChild(thumbStrip);
+
     videos.forEach((v, i) => {
         const wrap = document.createElement("div");
         wrap.className = "thumb" + (i === 0 ? " active" : "");
@@ -100,6 +106,43 @@ function buildThumbs() {
 
         thumbStrip.appendChild(wrap);
     });
+
+    // Add scroll zones
+    const leftZone = document.createElement("div");
+    leftZone.className = "scroll-zone left";
+    let isScrollingLeft = false;
+    function scrollLeft() {
+        if (isScrollingLeft) {
+            thumbStrip.scrollBy({ left: -2, behavior: 'auto' });
+            requestAnimationFrame(scrollLeft);
+        }
+    }
+    leftZone.addEventListener("mouseenter", () => {
+        isScrollingLeft = true;
+        scrollLeft();
+    });
+    leftZone.addEventListener("mouseleave", () => {
+        isScrollingLeft = false;
+    });
+    wrapper.appendChild(leftZone);
+
+    const rightZone = document.createElement("div");
+    rightZone.className = "scroll-zone right";
+    let isScrollingRight = false;
+    function scrollRight() {
+        if (isScrollingRight) {
+            thumbStrip.scrollBy({ left: 2, behavior: 'auto' });
+            requestAnimationFrame(scrollRight);
+        }
+    }
+    rightZone.addEventListener("mouseenter", () => {
+        isScrollingRight = true;
+        scrollRight();
+    });
+    rightZone.addEventListener("mouseleave", () => {
+        isScrollingRight = false;
+    });
+    wrapper.appendChild(rightZone);
 }
 
 /* Switch to a video */

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 537.16 156.93">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: Roundo-Medium, Roundo;
+        font-size: 75.3px;
+        font-weight: 500;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-family: Roundo-Light, Roundo;
+        font-size: 22.7px;
+        font-weight: 300;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <polygon class="cls-3" points="325.29 0 325.29 152.82 278.78 152.82 278.78 73.3 109.45 152.82 0 152.82 278.78 21.82 325.22 0 325.29 0"/>
+      <text class="cls-1" transform="translate(331.43 125.56)"><tspan x="0" y="0">SCND</tspan></text>
+      <text class="cls-2" transform="translate(334.37 152.82)"><tspan x="0" y="0">Studio</tspan></text>
+    </g>
+  </g>
+</svg>
